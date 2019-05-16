@@ -1,0 +1,55 @@
+<div class='container'>
+
+    <div class="jumbotron">
+        <h1 class="display-4" style="text-align: center; font-family: 'franklin gothic medium';letter-spacing: 8px">EAT
+            • DA • BORGER</h1>
+        <img class="card-img-top rounded mx-auto d-block" src="/assets/img/burger.png" alt="BORGER"
+            style="height: 200px; width: 200px">
+        <hr class="my-4">
+        <h2 class="lead" style = 'text-align: center'>Eat a burger, put a burger on the menu, the world is your oyster!</h2>
+    </div>
+
+    <div class='row'>
+        <div class='col-6'>
+            <div id="menu">
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{burger_name}}
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+
+        <div class='col-6'>
+            <div id="trash">
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{burger_name}}
+                    {{/if}}
+                    {{/each}}
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="form-group" style="margin-top:20px">
+            <input type="text" class="form-control" id="newBurger" placeholder="Pick a burger!">
+            <div class="text-right">
+            <button type="submit" class="btn btn-danger" id="addBurger">
+             Add Burger
+            </button>
+        </div>
+        </div>
+
+
+
+</div>

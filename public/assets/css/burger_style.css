@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(172, 130, 39);
+}
+
+#menu{
+    border: 5px inset rgb(119, 106, 106);
+    background-color: white;
+}
+
+#trash{
+    border: 5px inset rgb(119, 106, 106);
+    background-color: white;
+}
