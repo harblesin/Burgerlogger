@@ -8,6 +8,12 @@ selectAll: function(bb){
     })
 },
 
+createBurger: function(burger_name, ate, bb){
+    orm.createBurger("burgers", burger_name, ate, function(res){
+        bb(res);
+    })
+}
+
 // insertOne(table, col, val),
 
 // updateOne(table, col, val)

@@ -5,9 +5,22 @@ body{
 #menu{
     border: 5px inset rgb(119, 106, 106);
     background-color: white;
+    padding: 15px;
 }
 
 #trash{
     border: 5px inset rgb(119, 106, 106);
     background-color: white;
+    padding: 15px;
+}
+
+.eatBurger{
+    border-radius: 20px; 
+    font-size: 12px; 
+    padding: 2px; 
+    border: 1px outset rgb(156, 82, 21);
+}
+
+#addBurger{
+    margin-top:15px;
 }

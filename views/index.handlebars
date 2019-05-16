@@ -6,16 +6,22 @@
         <img class="card-img-top rounded mx-auto d-block" src="/assets/img/burger.png" alt="BORGER"
             style="height: 200px; width: 200px">
         <hr class="my-4">
-        <h2 class="lead" style = 'text-align: center'>Eat a burger, put a burger on the menu, the world is your oyster!</h2>
+        <h2 class="lead" style='text-align: center'>Eat a burger, put a burger on the menu, the world is your oyster!
+        </h2>
     </div>
 
     <div class='row'>
         <div class='col-6'>
             <div id="menu">
+                <h1 style = "text-align: center">MENU</h1>
                 <ul>
                     {{#each burgers}}
                     {{#unless devoured}}
-                    {{burger_name}}
+                    <li>
+                        {{burger_name}}
+                        <button class="eatBurger btn btn-danger"
+                            data-id="{{this.id}}">Devour!</button>
+                    </li>
                     {{/unless}}
                     {{/each}}
                 </ul>
@@ -25,10 +31,13 @@
 
         <div class='col-6'>
             <div id="trash">
+                <h1 style = "text-align: center">EATEN</h1>
                 <ul>
                     {{#each burgers}}
                     {{#if devoured}}
-                    {{burger_name}}
+                    <li>
+                        {{burger_name}}
+                    </li>
                     {{/if}}
                     {{/each}}
                 </ul>
@@ -42,13 +51,14 @@
 
 
     <div class="form-group" style="margin-top:20px">
-            <input type="text" class="form-control" id="newBurger" placeholder="Pick a burger!">
-            <div class="text-right">
+        <input type="text" class="form-control" id="newBurger" 
+        placeholder="Type the burger you want here!">
+        <div class="text-right">
             <button type="submit" class="btn btn-danger" id="addBurger">
-             Add Burger
+                Add Burger
             </button>
         </div>
-        </div>
+    </div>
 
 
 

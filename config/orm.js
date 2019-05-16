@@ -33,9 +33,9 @@ var orm = {
         })
     },
 
-    createBurger: function (table, burger_name, bb) {
-        var query = "UPDATE " + burger_name + "FROM " + table + ';';
-        connection.query(query, function (err, results){
+    createBurger: function (table, burger_name, ate, bb) {
+        var query = "INSERT INTO " + table + " (burger_name) VALUES (?,?)";
+        connection.query(query, [burger_name, ate], function (err, results){
             if(err){throw err};
             bb(results);
         })
