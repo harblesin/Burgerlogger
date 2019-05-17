@@ -16,9 +16,10 @@ router.get("/", function(req,res){
 
 router.post("/api/burger", function(req,res){
     burger.createBurger(
-        req.body.burger, req.body.devoured
+        req.body.burger_name, false
     , function(results){
         res.json(results)
+        console.log("successful post")
     })
 })
 

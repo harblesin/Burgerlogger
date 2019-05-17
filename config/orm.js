@@ -34,7 +34,7 @@ var orm = {
     },
 
     createBurger: function (table, burger_name, ate, bb) {
-        var query = "INSERT INTO " + table + " (burger_name) VALUES (?,?)";
+        var query = "INSERT INTO " + table + "(burger_name, devoured) VALUES (?,?) ";
         connection.query(query, [burger_name, ate], function (err, results){
             if(err){throw err};
             bb(results);
