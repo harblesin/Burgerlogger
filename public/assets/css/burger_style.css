@@ -21,6 +21,13 @@ body{
     border: 1px outset rgb(156, 82, 21);
 }
 
+.trashBurger{
+    border-radius: 20px; 
+    font-size: 12px; 
+    padding: 2px; 
+    border: 1px outset rgb(101, 206, 233);
+}
+
 #addBurger{
     margin-top:15px;
 }

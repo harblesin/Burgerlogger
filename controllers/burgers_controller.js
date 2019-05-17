@@ -19,8 +19,29 @@ router.post("/api/burger", function(req,res){
         req.body.burger_name, false
     , function(results){
         res.json(results)
-        console.log("successful post")
+        console.log("successful post");
     })
+})
+
+router.put("/api/burger", function(req, res){
+    burger.eatBurger(
+        req.body.devoured,
+        req.body.id,
+        function(results){
+            res.json(results)
+            console.log("successful put");
+        }
+    )
+})
+
+router.delete("/api/burger", function(req,res){
+    burger.trashBurger(
+        req.body.id,
+        function(results){
+            res.json(results);
+            console.log("Burger thrown in the trash!")
+        }
+    )
 })
 
 module.exports = router;

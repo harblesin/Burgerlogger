@@ -5,14 +5,27 @@ var burger = {
 selectAll: function(bb){
     orm.selectAll("burgers", function(res){
         bb(res)
-    })
+    });
 },
 
 createBurger: function(burger_name, ate, bb){
     orm.createBurger("burgers", burger_name, ate, function(res){
         bb(res);
-    })
+    });
+},
+
+eatBurger: function(ate, id, bb){
+    orm.eatBurger("burgers", ate, id, function(res){
+        bb(res);
+    });
+},
+
+trashBurger: function(id, callback){
+    orm.trashBurger("burgers", id, function(res){
+        callback(res);
+    });
 }
+
 
 // insertOne(table, col, val),
 

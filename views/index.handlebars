@@ -37,6 +37,8 @@
                     {{#if devoured}}
                     <li>
                         {{burger_name}}
+                        <button class="trashBurger btn btn-info"
+                            data-id="{{this.id}}">Trash it!</button>
                     </li>
                     {{/if}}
                     {{/each}}
@@ -52,7 +54,7 @@
 
     <div class="form-group" style="margin-top:20px">
         <input type="text" class="form-control" id="newBurger" 
-        placeholder="Type the burger you want here!">
+        placeholder="Type the burger you want on the menu here!">
         <div class="text-right">
             <button type="submit" class="btn btn-danger" id="addBurger">
                 Add Burger
