@@ -17,12 +17,13 @@ $('.eatBurger').click(function(event){
     event.preventDefault()
     console.log("clicked")
 
+    var id = $(this).data("id")
+
     var burger = {
-        id: $(this).data("id"),
         devoured: true
     }
 
-    $.ajax("/api/burger", {
+    $.ajax("/api/burger/"+id, {
         method: "PUT",
         data: burger
     }).then(
@@ -36,13 +37,10 @@ $('.trashBurger').click(function(event){
     event.preventDefault();
     console.log('trashed')
 
-    var burger = {
-        id: $(this).data("id")
-    }
+        var id = $(this).data("id")
 
-    $.ajax("/api/burger", {
-        method: "DELETE",
-        data: burger
+    $.ajax("/api/burger/" + id, {
+        method: "DELETE"
     }).then(
         function(){
             location.reload();

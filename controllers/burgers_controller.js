@@ -23,10 +23,10 @@ router.post("/api/burger", function(req,res){
     })
 })
 
-router.put("/api/burger", function(req, res){
+router.put("/api/burger/:id", function(req, res){
     burger.eatBurger(
         req.body.devoured,
-        req.body.id,
+        req.params.id,
         function(results){
             res.json(results)
             console.log("successful put");
@@ -34,9 +34,9 @@ router.put("/api/burger", function(req, res){
     )
 })
 
-router.delete("/api/burger", function(req,res){
+router.delete("/api/burger/:id", function(req,res){
     burger.trashBurger(
-        req.body.id,
+        req.params.id,
         function(results){
             res.json(results);
             console.log("Burger thrown in the trash!")

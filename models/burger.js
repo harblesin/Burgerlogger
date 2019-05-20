@@ -2,21 +2,21 @@ var orm = require("../config/orm.js");
 
 var burger = {
 
-selectAll: function(bb){
+selectAll: function(callback){
     orm.selectAll("burgers", function(res){
-        bb(res)
+        callback(res)
     });
 },
 
-createBurger: function(burger_name, ate, bb){
+createBurger: function(burger_name, ate, callback){
     orm.createBurger("burgers", burger_name, ate, function(res){
-        bb(res);
+        callback(res);
     });
 },
 
-eatBurger: function(ate, id, bb){
+eatBurger: function(ate, id, callback){
     orm.eatBurger("burgers", ate, id, function(res){
-        bb(res);
+        callback(res);
     });
 },
 
@@ -25,11 +25,6 @@ trashBurger: function(id, callback){
         callback(res);
     });
 }
-
-
-// insertOne(table, col, val),
-
-// updateOne(table, col, val)
 
 };
 

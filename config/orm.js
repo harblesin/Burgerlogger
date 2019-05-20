@@ -1,43 +1,37 @@
+//Imports the connection to the database from connection.js as variable connection.
 var connection = require("./connection.js");
 
+//
 var orm = {
 
-    selectAll: function (table, bb) {
+    selectAll: function (table, callback) {
         var query = "SELECT * FROM " + table + ";";
         connection.query(query, function (err, results) {
                 if (err) {
                     throw err
                 }
-                bb(results);
+                callback(results);
             }
-
-            // insertOne: function (table, col, val) {
-
-            // },
-
-            // updateOne: function (table, col, val) {
-
-            // }
         )
     },
 
 
 
-    eatBurger: function (table, ate, id, bb) {
+    eatBurger: function (table, ate, id, callback) {
         var query = "UPDATE " + table + " SET devoured = "+ate+" WHERE id = ?";
         connection.query(query, id, function (err, results) {
             if (err) {
                 throw err
             }
-            bb(results);
+            callback(results);
         })
     },
 
-    createBurger: function (table, burger_name, ate, bb) {
+    createBurger: function (table, burger_name, ate, callback) {
         var query = "INSERT INTO " + table + "(burger_name, devoured) VALUES (?,?) ";
         connection.query(query, [burger_name, ate], function (err, results){
             if(err){throw err};
-            bb(results);
+            callback(results);
         })
     },
 
@@ -50,8 +44,6 @@ var orm = {
     }
 
 };
-
-
 
 
 module.exports = orm;

@@ -1,17 +1,25 @@
 body{
     background-color: rgb(172, 130, 39);
+    background-image: url("../img/background.jpg")
 }
 
 #menu{
     border: 5px inset rgb(119, 106, 106);
     background-color: white;
     padding: 15px;
+    border-radius: 30px;
+    background-image: url(../img/Menu-Board.jpg);
+    color: white;
 }
 
 #trash{
     border: 5px inset rgb(119, 106, 106);
     background-color: white;
     padding: 15px;
+    border-radius: 30px;
+    background-image: url(../img/Menu-Board.jpg);
+    min-height: 670px;
+    color:rgb(255, 255, 255);
 }
 
 .eatBurger{
