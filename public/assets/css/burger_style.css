@@ -1,3 +1,4 @@
+/*The styling for the index.handlebars*/
 body{
     background-color: rgb(172, 130, 39);
     background-image: url("../img/background.jpg")
@@ -38,4 +39,17 @@ body{
 
 #addBurger{
     margin-top:15px;
+}
+
+#top{
+    width:100%;
+}
+#bottom{
+    width:100%;
+}
+#topT{
+    width:100%;
+}
+#bottomT{
+    width:100%;
 }
